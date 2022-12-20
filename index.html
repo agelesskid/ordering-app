@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/normalize.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Restaraunt</title>
+</head>
+<body>
+    
+    <header>
+        <h1>Jimmy’s Diner</h1>
+        <h2>The best burgers and pizzas in town.</h2>
+    </header>
+
+    <main>
+        <section class="selection">
+            <ul class="selection__list" id="selection-list"></ul>
+        </section>
+        <section class="order" id="order">
+            <h3 class="center">Your order</h3>
+            <ul class="order__list" id="order-list"></ul>
+            <div class="order__total">
+                <p class="order__total__heading">Total price:</p>
+                <p class="order__total__price" id="order-total-price"></p>
+            </div>
+            <button type="button" class="order__btn">Complete order</button>
+        </section>
+    </main>
+
+    <script src="./js/index.js" type="module"></script>
+</body>
+</html>

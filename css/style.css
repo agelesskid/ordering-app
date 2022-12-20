@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Smythe&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Smythe';
+    background-color: #DEDEDE;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    background: url(../img/hamburger-on-the-table.png) center center / contain no-repeat;
+    min-height: 167px;
+    color: #fff;
+    padding: 46px;
+    box-sizing: border-box;
+}
+
+main {
+    padding: 17px 46px 53px;
+    background-color: #fff;
+    min-height: 994px;
+    box-sizing: border-box;
+}
+
+.selection__list__el {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+    border-bottom: 1px solid #D2D2D2;
+}
+
+.selection__list__el__wrapper {
+    margin-left: 31px;
+}
+
+.selection__list__el__wrapper p{
+    margin-bottom: 8px;
+}
+
+.selection__list__el__wrapper p:last-child {
+    margin-bottom: 0px;
+}
+
+.selection__list__el__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    color: #3C3C3C;
+    border-radius: 50%;
+    border: 1.5px solid #DEDEDE;
+    background: none;
+    cursor: pointer;
+    padding: 10px 12px 12px 11px;
+}
+
+.order {
+    display: none; /* block */
+    padding-top: 45px;
+}
+
+.order__list {
+    border-bottom: 2px solid #393333;
+}
+
+.order__list__el {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.order__list__el__remove-btn {
+    color: #BBBBBB;
+    cursor: pointer;
+    border: none;
+    background: none;
+    margin-left: 13px;
+
+    /* Typography */
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+.order__list__el__item-price{
+    margin-left: auto;
+}
+
+.order h3 {
+    margin-bottom: 64px;
+}
+
+.order__total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+
+.order__btn {
+    cursor: pointer;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    background-color: #16DB99;
+    padding: 18px 0;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 3px;
+    margin-top: 50px;
+    
+    /* Typography */
+    font-family: Verdana;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/* Typography */
+
+p, button, h1 {
+    line-height: 24px;
+}
+
+header h1 {
+    font-size: 39px;
+    margin: 0;
+    margin-bottom: 19px;
+}
+
+header h2 {
+    font-size: 22.4216px;
+    line-height: 14px;
+}
+
+.selection__list__el__emoji {
+    font-size: 79px;
+    line-height: 98px;
+    letter-spacing: -0.02em;
+    min-width: 110px;
+}
+
+.selection__list__el__wrapper__item-name, .order h3, .order__list__el__item-name{
+    font-size: 28px;
+    line-height: 17px;
+}
+
+.selection__list__el__wrapper__item-ingredients{
+    font-size: 16px;
+    color: #8B8B8B;
+}
+
+.selection__list__el__wrapper__item-price, .order__list__el__item-price, .order__total__price{
+    font-size: 20px;
+}
+
+.selection__list__el__button {
+    font-size: 32px;
+    font-weight: 200;
+}
+
+.order__total__heading{
+    font-size: 28px;
+}
+
+/* Misc */
+
+.inter {
+    font-family: 'Inter';
+}
+
+.center {
+    text-align: center;
+}
