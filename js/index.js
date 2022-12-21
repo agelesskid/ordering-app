@@ -3,24 +3,7 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
 const orderArray = []
 const paymentModal = document.getElementById('payment-modal')
-
-document.addEventListener('click', function(e){
-    if (e.target.dataset.change == 'add' && e.target.dataset.itemId){
-        handleAdditionClick(e.target.dataset.itemId)
-    } else if (e.target.dataset.change == 'remove' && e.target.dataset.itemId) {
-        handleRemoveClick(e.target.dataset.itemId)
-    } else if (e.target.id == 'order-btn'){
-        paymentModal.style.display = 'block'
-    } else if (!e.target.closest('#payment-modal')) {
-        paymentModal.style.display = 'none'
-    }
-})
-
-document.addEventListener('submit', function(e){
-    e.preventDefault()
-    document.getElementById('payment-modal-form').reset()
-    paymentModal.style.display = 'none'
-})
+const alert = document.getElementById('alert')
 
 function addToOrderArray(itemId){
     const orderItem = menuArray.filter(item => item.id == itemId)[0]
@@ -65,6 +48,7 @@ function renderOrder(){
         document.getElementById('order-list').innerHTML = getOrderHtml()
         document.getElementById('order').style.display = 'block'
         document.getElementById('order-total-price').innerText = `$${getTotalPrice()}`
+        alert.style.display = 'none'
     } else {
         document.getElementById('order').style.display = 'none'
     }
@@ -82,6 +66,15 @@ function handleRemoveClick(itemId){
     renderOrder()
 }
 
+function handleSubmitClick(){
+    const form = document.getElementById('payment-modal-form')
+    document.getElementById('alert-msg').innerText = `Thanks, ${form.name.value}! Your order is on its way!`
+    paymentModal.style.display = 'none'
+    alert.style.display = 'block'
+    orderArray.length = 0
+    form.reset()
+    renderOrder()
+}
 
 function getMenuHtml(){
 
@@ -111,5 +104,22 @@ function renderMenu(){
     document.getElementById('selection-list').innerHTML = getMenuHtml()
 
 }
+
+document.addEventListener('click', function(e){
+    if (e.target.dataset.change == 'add' && e.target.dataset.itemId){
+        handleAdditionClick(e.target.dataset.itemId)
+    } else if (e.target.dataset.change == 'remove' && e.target.dataset.itemId) {
+        handleRemoveClick(e.target.dataset.itemId)
+    } else if (e.target.id == 'order-btn'){
+        paymentModal.style.display = 'block'
+    } else if (!e.target.closest('#payment-modal')) {
+        paymentModal.style.display = 'none'
+    }
+})
+
+document.addEventListener('submit', function(e){
+    e.preventDefault()
+    handleSubmitClick()
+})
 
 renderMenu()
