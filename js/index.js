@@ -18,6 +18,7 @@ document.addEventListener('click', function(e){
 
 document.addEventListener('submit', function(e){
     e.preventDefault()
+    document.getElementById('payment-modal-form').reset()
     paymentModal.style.display = 'none'
 })
 

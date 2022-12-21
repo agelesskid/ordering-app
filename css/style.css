@@ -6,6 +6,8 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
+/* General */
+
 * {
     margin: 0;
     padding: 0;
@@ -39,6 +41,25 @@ main {
     box-sizing: border-box;
 }
 
+/* Typography */
+
+p, button, h1 {
+    line-height: 24px;
+}
+
+h1 {
+    font-size: 39px;
+    margin: 0;
+    margin-bottom: 19px;
+}
+
+header h2 {
+    font-size: 22.4216px;
+    line-height: 14px;
+}
+
+/* Selection */
+
 .selection__list__el {
     display: flex;
     align-items: center;
@@ -71,6 +92,31 @@ main {
     padding: 10px 12px 12px 11px;
 }
 
+.selection__list__el__emoji {
+    font-size: 79px;
+    line-height: 98px;
+    letter-spacing: -0.02em;
+    min-width: 110px;
+}
+
+.selection__list__el__wrapper__item-ingredients{
+    font-size: 16px;
+    color: #8B8B8B;
+}
+
+.selection__list__el__button {
+    font-size: 32px;
+    font-weight: 200;
+}
+
+/* Alert */
+
+.alert p {
+
+}
+
+/* Order */
+
 .order {
     display: none; /* block */
     padding-top: 45px;
@@ -92,7 +138,6 @@ main {
     background: none;
     margin-left: 13px;
 
-    /* Typography */
     font-family: Verdana;
     font-size: 12px;
 }
@@ -112,58 +157,12 @@ main {
     margin-top: 14px;
 }
 
-.order__btn {
-    margin-top: 50px;
-}
-
-/* Typography */
-
-p, button, h1 {
-    line-height: 24px;
-}
-
-header h1 {
-    font-size: 39px;
-    margin: 0;
-    margin-bottom: 19px;
-}
-
-header h2 {
-    font-size: 22.4216px;
-    line-height: 14px;
-}
-
-.selection__list__el__emoji {
-    font-size: 79px;
-    line-height: 98px;
-    letter-spacing: -0.02em;
-    min-width: 110px;
-}
-
-.selection__list__el__wrapper__item-name, .order h3, .order__list__el__item-name{
-    font-size: 28px;
-    line-height: 17px;
-}
-
-.selection__list__el__wrapper__item-ingredients{
-    font-size: 16px;
-    color: #8B8B8B;
-}
-
-.selection__list__el__wrapper__item-price, .order__list__el__item-price, .order__total__price{
-    font-size: 20px;
-}
-
-.selection__list__el__button {
-    font-size: 32px;
-    font-weight: 200;
-}
-
 .order__total__heading{
     font-size: 28px;
 }
 
 .order__btn {
+    margin-top: 50px;
     font-family: Verdana;
     font-size: 16px;
     font-weight: 700;
@@ -223,6 +222,17 @@ header h2 {
 .payment-modal__form__btn {
     min-height: 71px;
     margin-top: auto;
+    font-size: 20px;
+}
+
+/* Mixed */
+
+.selection__list__el__wrapper__item-name, .order h3, .order__list__el__item-name{
+    font-size: 28px;
+    line-height: 17px;
+}
+
+.selection__list__el__wrapper__item-price, .order__list__el__item-price, .order__total__price{
     font-size: 20px;
 }
 

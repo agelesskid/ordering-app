@@ -20,6 +20,10 @@
             <h3 hidden>Menu</h3>
             <ul class="selection__list" id="selection-list"></ul>
         </section>
+        <section class="alert">
+            <h3 hidden>Thank You!</h3>
+            <p>Thanks, James! Your order is on its way!</p>   
+        </section>
         <section class="order" id="order">
             <h3 class="center">Your order</h3>
             <ul class="order__list" id="order-list"></ul>
@@ -32,18 +36,18 @@
     </main>
 
     <div class="payment-modal" id="payment-modal">
-        <form class="payment-modal__form" method="POST">
+        <form class="payment-modal__form" method="POST" id="payment-modal-form">
             <h3 class="payment-modal__form__heading">Enter card details</h3>
 
             <div class="payment-modal__form__input-wrapper">
                 <label for="name" hidden>Enter Your Name</label>
-                <input type="text" name="name" placeholder="Enter Your Name" id="name" required>
+                <input class="payment-modal__form__input-wrapper__input" type="text" name="name" placeholder="Enter Your Name" id="name" required>
 
                 <label for="cardNumber" hidden>Enter Your Card Number</label>
-                <input type="text" name="cardNumber" placeholder="Enter Your Card Number" id="cardNumber" required>
+                <input class="payment-modal__form__input-wrapper__input" type="text" name="cardNumber" placeholder="Enter Your Card Number" id="cardNumber" required>
 
                 <label for="cvv" hidden>Enter Your CVV</label>
-                <input type="number" name="cvv" placeholder="Enter Your CVV" id="cvv" required>
+                <input class="payment-modal__form__input-wrapper__input" type="number" name="cvv" placeholder="Enter Your CVV" id="cvv" required>
             </div>
             
             <button type="submit" class="payment-modal__form__btn green-btn">Pay</button>
