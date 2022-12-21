@@ -1,12 +1,14 @@
+/* Fonts */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400&family=Smythe&display=swap');
+
+/* General */
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
-
-/* General */
 
 * {
     margin: 0;
@@ -111,8 +113,18 @@ header h2 {
 
 /* Alert */
 
-.alert p {
+.alert {
+    padding: 51px 60px;
+    background: #ECFDF5;
+    border-radius: 3px;
+    margin-top: 45px;
+}
 
+.alert p {
+    color: #065F46;
+
+    font-size: 32px;
+    line-height: 17px;
 }
 
 /* Order */
