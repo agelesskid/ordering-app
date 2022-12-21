@@ -2,13 +2,23 @@ import {menuArray} from './data.js'
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 
 const orderArray = []
+const paymentModal = document.getElementById('payment-modal')
 
 document.addEventListener('click', function(e){
     if (e.target.dataset.change == 'add' && e.target.dataset.itemId){
         handleAdditionClick(e.target.dataset.itemId)
     } else if (e.target.dataset.change == 'remove' && e.target.dataset.itemId) {
         handleRemoveClick(e.target.dataset.itemId)
+    } else if (e.target.id == 'order-btn'){
+        paymentModal.style.display = 'block'
+    } else if (!e.target.closest('#payment-modal')) {
+        paymentModal.style.display = 'none'
     }
+})
+
+document.addEventListener('submit', function(e){
+    e.preventDefault()
+    paymentModal.style.display = 'none'
 })
 
 function addToOrderArray(itemId){
@@ -19,6 +29,16 @@ function addToOrderArray(itemId){
 
 function removeFromOrderArray(itemId){
     orderArray.splice(orderArray.findIndex(item => item.uuid === itemId), 1)
+}
+
+function getTotalPrice(){
+    let totalPrice = 0
+
+    orderArray.forEach(function(item){
+        totalPrice += item.price
+    })
+
+    return totalPrice
 }
 
 function getOrderHtml(){
@@ -43,6 +63,7 @@ function renderOrder(){
     if(orderArray.length){
         document.getElementById('order-list').innerHTML = getOrderHtml()
         document.getElementById('order').style.display = 'block'
+        document.getElementById('order-total-price').innerText = `$${getTotalPrice()}`
     } else {
         document.getElementById('order').style.display = 'none'
     }

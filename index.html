@@ -17,6 +17,7 @@
 
     <main>
         <section class="selection">
+            <h3 hidden>Menu</h3>
             <ul class="selection__list" id="selection-list"></ul>
         </section>
         <section class="order" id="order">
@@ -26,9 +27,28 @@
                 <p class="order__total__heading">Total price:</p>
                 <p class="order__total__price" id="order-total-price"></p>
             </div>
-            <button type="button" class="order__btn">Complete order</button>
+            <button type="button" class="order__btn green-btn" id="order-btn">Complete order</button>
         </section>
     </main>
+
+    <div class="payment-modal" id="payment-modal">
+        <form class="payment-modal__form" method="POST">
+            <h3 class="payment-modal__form__heading">Enter card details</h3>
+
+            <div class="payment-modal__form__input-wrapper">
+                <label for="name" hidden>Enter Your Name</label>
+                <input type="text" name="name" placeholder="Enter Your Name" id="name" required>
+
+                <label for="cardNumber" hidden>Enter Your Card Number</label>
+                <input type="text" name="cardNumber" placeholder="Enter Your Card Number" id="cardNumber" required>
+
+                <label for="cvv" hidden>Enter Your CVV</label>
+                <input type="number" name="cvv" placeholder="Enter Your CVV" id="cvv" required>
+            </div>
+            
+            <button type="submit" class="payment-modal__form__btn green-btn">Pay</button>
+        </form>
+    </div>
 
     <script src="./js/index.js" type="module"></script>
 </body>
