@@ -5,10 +5,14 @@ const orderArray = []
 const paymentModal = document.getElementById('payment-modal')
 const alert = document.getElementById('alert')
 
+function onlyUnique(value, index, self) {
+    return self.indexOf(value) === index;
+}
+
 function addToOrderArray(itemId){
     const orderItem = menuArray.filter(item => item.id == itemId)[0]
     
-    orderArray.push({name: orderItem.name, price: orderItem.price, uuid: uuidv4()})
+    orderArray.push({name: orderItem.name, price: orderItem.price, type: orderItem.type, uuid: uuidv4()})
 }
 
 function removeFromOrderArray(itemId){
@@ -17,12 +21,18 @@ function removeFromOrderArray(itemId){
 
 function getTotalPrice(){
     let totalPrice = 0
+    const discountArr = []
 
     orderArray.forEach(function(item){
         totalPrice += item.price
+        discountArr.push(item.type)
     })
 
-    return totalPrice
+    if (discountArr.filter(onlyUnique).length > 1){
+        totalPrice -= totalPrice/100*15
+    }
+
+    return Math.floor(totalPrice)
 }
 
 function getOrderHtml(){
