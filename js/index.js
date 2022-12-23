@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'https://jspm.dev/uuid'
 const orderArray = []
 const paymentModal = document.getElementById('payment-modal')
 const alert = document.getElementById('alert')
+const alertMsg = document.getElementById('alert-msg')
 
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
@@ -43,7 +44,7 @@ function getOrderHtml(){
         orderHtml += `
             <li class="order__list__el">
                 <p class="order__list__el__item-name">${item.name}</p>
-                <button type="button" class="order__list__el__remove-btn" data-item-id="${item.uuid}" data-change="remove">remove</button>
+                <button type="button" class="order__list__el__remove-btn verdana" data-item-id="${item.uuid}" data-change="remove">remove</button>
                 <p class="order__list__el__item-price">$${item.price}</p>
             </li>
         `
@@ -56,7 +57,6 @@ function renderOrder(){
     
     if(orderArray.length){
         document.getElementById('order-list').innerHTML = getOrderHtml()
-        document.getElementById('order').style.display = 'block'
         document.getElementById('order-total-price').innerText = `$${getTotalPrice()}`
         alert.style.display = 'none'
     } else {
@@ -78,7 +78,7 @@ function handleRemoveClick(itemId){
 
 function handleSubmitClick(){
     const form = document.getElementById('payment-modal-form')
-    document.getElementById('alert-msg').innerText = `Thanks, ${form.name.value}! Your order is on its way!`
+    alertMsg.innerText = `Thanks, ${form.name.value}! Your order is on its way!`
     paymentModal.style.display = 'none'
     alert.style.display = 'block'
     orderArray.length = 0
@@ -122,6 +122,11 @@ document.addEventListener('click', function(e){
         handleRemoveClick(e.target.dataset.itemId)
     } else if (e.target.id == 'order-btn'){
         paymentModal.style.display = 'block'
+    } else if (e.target.id == 'open-order-btn' && orderArray.length) {
+        document.getElementById('order').style.display = 'block'
+    } else if (e.target.id == 'open-order-btn' && !orderArray.length) {
+        alert.style.display = 'block'
+        alertMsg.innerText = 'Your order is empty'
     } else if (!e.target.closest('#payment-modal')) {
         paymentModal.style.display = 'none'
     }
