@@ -61,13 +61,15 @@ function renderOrder(){
     if(orderArray.length){
         document.getElementById('order-list').innerHTML = getOrderHtml()
         document.getElementById('order-total-price').innerText = `$${getTotalPrice()}`
+        if (orderArray.length == 1) {
+            orderHtml.style.display = 'block'
+        }
         alert.style.display = 'none'
     } else {
         orderHtml.style.display = 'none'
     }
     
 }
-
 
 function handleAdditionClick(itemId){
     addToOrderArray(itemId)
