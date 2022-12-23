@@ -147,6 +147,16 @@ header h2 {
     box-sizing: border-box;
 }
 
+.order span::after{
+    content: '✖';
+    cursor: pointer;
+    position: absolute;
+    top: 45px;
+    right: 45px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
 .order__list {
     border-bottom: 2px solid #393333;
 }
