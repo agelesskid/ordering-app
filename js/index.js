@@ -45,10 +45,10 @@ function getOrderHtml(){
 
     orderArray.forEach(function(item){
         orderHtml += `
-            <li class="order__list__el">
-                <p class="order__list__el__item-name">${item.name}</p>
-                <button type="button" class="order__list__el__remove-btn verdana" data-item-id="${item.uuid}" data-change="remove">remove</button>
-                <p class="order__list__el__item-price">$${item.price}</p>
+            <li class="order__wrapper__list__el">
+                <p class="order__wrapper__list__el__item-name">${item.name}</p>
+                <button type="button" class="order__wrapper__list__el__remove-btn verdana" data-item-id="${item.uuid}" data-change="remove">remove</button>
+                <p class="order__wrapper__list__el__item-price">$${item.price}</p>
             </li>
         `
     })

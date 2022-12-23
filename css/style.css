@@ -135,6 +135,14 @@ header h2 {
 /* Order */
 
 .order {
+    margin-top: auto;
+}
+
+.order-open__btn {
+    font-weight: 700;
+}
+
+.order__wrapper {
     display: none; /* block */
     position: fixed;
     bottom: 0;
@@ -143,11 +151,12 @@ header h2 {
     margin: auto;
     background: #fff;
     padding: 46px;
+    padding-bottom: 53px;
     max-width: 600px;
     box-sizing: border-box;
 }
 
-.order__close-btn::after{
+.order__wrapper__close-btn::after{
     content: '✖';
     cursor: pointer;
     position: absolute;
@@ -157,16 +166,16 @@ header h2 {
     font-weight: 400;
 }
 
-.order__list {
+.order__wrapper__list {
     border-bottom: 2px solid #393333;
 }
 
-.order__list__el {
+.order__wrapper__list__el {
     display: flex;
     margin-bottom: 20px;
 }
 
-.order__list__el__remove-btn {
+.order__wrapper__list__el__remove-btn {
     color: #BBBBBB;
     cursor: pointer;
     border: none;
@@ -176,7 +185,7 @@ header h2 {
     font-size: 12px;
 }
 
-.order__list__el__item-price{
+.order__wrapper__list__el__item-price{
     margin-left: auto;
 }
 
@@ -184,38 +193,28 @@ header h2 {
     margin-bottom: 64px;
 }
 
-.order__total {
+.order__wrapper__total {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 14px;
 }
 
-.order__total__heading{
+.order__wrapper__total__heading{
     font-size: 28px;
 }
 
-.order__total__heading__span{
+.order__wrapper__total__heading__span{
     display: none; /* inline */
 
     color: #065F46;
     font-size: 22px;
 }
 
-.order__btn {
+.order__wrapper__btn {
     margin-top: 50px;
 
     font-size: 16px;
-    font-weight: 700;
-}
-
-/* Order open */
-
-.order-open {
-    margin-top: auto;
-}
-
-.order-open__btn {
     font-weight: 700;
 }
 
@@ -276,12 +275,12 @@ header h2 {
 
 /* Mixed */
 
-.selection__list__el__wrapper__item-name, .order h3, .order__list__el__item-name{
+.selection__list__el__wrapper__item-name, .order h3, .order__wrapper__list__el__item-name{
     font-size: 28px;
     line-height: 17px;
 }
 
-.selection__list__el__wrapper__item-price, .order__list__el__item-price, .order__total__price{
+.selection__list__el__wrapper__item-price, .order__wrapper__list__el__item-price, .order__wrapper__total__price{
     font-size: 20px;
 }
 
