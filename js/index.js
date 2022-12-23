@@ -5,6 +5,7 @@ const orderArray = []
 const paymentModal = document.getElementById('payment-modal')
 const alert = document.getElementById('alert')
 const alertMsg = document.getElementById('alert-msg')
+const orderHtml = document.getElementById('order')
 
 function onlyUnique(value, index, self) {
     return self.indexOf(value) === index;
@@ -60,7 +61,7 @@ function renderOrder(){
         document.getElementById('order-total-price').innerText = `$${getTotalPrice()}`
         alert.style.display = 'none'
     } else {
-        document.getElementById('order').style.display = 'none'
+        orderHtml.style.display = 'none'
     }
     
 }
@@ -122,11 +123,13 @@ document.addEventListener('click', function(e){
         handleRemoveClick(e.target.dataset.itemId)
     } else if (e.target.id == 'order-btn'){
         paymentModal.style.display = 'block'
-    } else if (e.target.id == 'open-order-btn' && orderArray.length) {
-        document.getElementById('order').style.display = 'block'
-    } else if (e.target.id == 'open-order-btn' && !orderArray.length) {
+    } else if (e.target.id == 'order-open-btn' && orderArray.length) {
+        orderHtml.style.display = 'block'
+    } else if (e.target.id == 'order-open-btn' && !orderArray.length) {
         alert.style.display = 'block'
         alertMsg.innerText = 'Your order is empty'
+    } else if (e.target.id == 'order-close-btn') {
+        orderHtml.style.display = 'none'
     } else if (!e.target.closest('#payment-modal')) {
         paymentModal.style.display = 'none'
     }

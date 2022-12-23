@@ -202,13 +202,13 @@ header h2 {
     font-weight: 700;
 }
 
-/* Open Order */
+/* Order open */
 
-.open-order {
+.order-open {
     margin-top: auto;
 }
 
-.open-order__btn {
+.order-open__btn {
     font-weight: 700;
 }
 
