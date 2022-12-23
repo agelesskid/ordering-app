@@ -29,7 +29,7 @@ ul {
 }
 
 header {
-    background: url(../img/hamburger-on-the-table.png) center center / contain no-repeat;
+    background: url(../img/hamburger-on-the-table.png) center center / cover no-repeat;
     min-height: 167px;
     color: #fff;
     padding: 46px;
@@ -127,7 +127,7 @@ header h2 {
     color: #065F46;
 
     font-size: 32px;
-    line-height: 17px;
+    line-height: 35px;
 }
 
 /* Order */
