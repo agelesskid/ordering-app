@@ -147,7 +147,7 @@ header h2 {
     box-sizing: border-box;
 }
 
-.order span::after{
+.order__close-btn::after{
     content: '✖';
     cursor: pointer;
     position: absolute;
@@ -193,6 +193,13 @@ header h2 {
 
 .order__total__heading{
     font-size: 28px;
+}
+
+.order__total__heading__span{
+    display: none; /* inline */
+
+    color: #065F46;
+    font-size: 22px;
 }
 
 .order__btn {

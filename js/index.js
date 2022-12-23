@@ -24,6 +24,7 @@ function removeFromOrderArray(itemId){
 function getTotalPrice(){
     let totalPrice = 0
     const discountArr = []
+    document.getElementById('discount').style.display = 'none'
 
     orderArray.forEach(function(item){
         totalPrice += item.price
@@ -32,6 +33,7 @@ function getTotalPrice(){
 
     if (discountArr.filter(onlyUnique).length > 1){
         totalPrice -= totalPrice/100*15
+        document.getElementById('discount').style.display = 'inline'
     }
 
     return Math.floor(totalPrice)
